@@ -1,0 +1,24 @@
+{
+  "name": "C# (.NET)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
+      "version": "nightly"
+    },
+    "ghcr.io/ichirou2910/devcontainer-features/nnn:1": {
+      "version": "4.9",
+      "makeOpts": "O_NERD=1"
+    },
+    "ghcr.io/devcontainers-contrib/features/fzf:1": {},
+    "ghcr.io/devcontainers-contrib/features/ripgrep:1": {},
+    "ghcr.io/devcontainers-contrib/features/exa:1": {}
+  },
+  "postCreateCommand": "dotnet restore",
+  "initializeCommand": "docker network inspect truesight_network > /dev/null || docker network create truesight_network --attachable",
+  "runArgs": [
+    "--network=truesight_network",
+    "-p=5000:5000"
+  ]
+}

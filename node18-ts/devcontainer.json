@@ -19,6 +19,7 @@
   "initializeCommand": "docker network inspect truesight_network > /dev/null || docker network create truesight_network --attachable",
   "runArgs": [
     "--network=truesight_network",
+    "--name=service-frontend",
     "-p=3000:3000"
   ]
 }

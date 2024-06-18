@@ -4,11 +4,11 @@
 
 - Copy config from targeted framework to your project root
 - Edit network name if needed
-- Edit port config in `devcontainer.json`
+- Edit port and service name in `devcontainer.json`
 
 ```json
 {
-  "runArgs": ["-p=5000:5000"]
+  "runArgs": ["--name=service-frontend", "-p=5000:5000"]
 }
 ```
 
